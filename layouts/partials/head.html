@@ -4,16 +4,16 @@
   {{- if .IsHome }}
   <title>{{ .Site.Title }}</title>
   <meta property="og:title" content="{{ .Site.Title }}" />
-  <meta name="twitter:title" content="{{ .Site.Title | truncate 70 }}" />
+  <!--meta name="twitter:title" content="{{ .Site.Title | truncate 70 }}" /-->
   {{- else }}
   <title>{{ .Title }} - {{ .Site.Title }}</title>
   <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}" />
-  <meta name="twitter:title" content="{{ printf "%s - %s" .Title .Site.Title | truncate 70 }}" />
+  <!--meta name="twitter:title" content="{{ printf "%s - %s" .Title .Site.Title | truncate 70 }}" /-->
   {{- end }}
   {{- with .Description | default .Params.subtitle | default .Summary }}
   <meta name="description" content="{{ . }}">
   <meta property="og:description" content="{{ . }}">
-  <meta name="twitter:description" content="{{ . | truncate 200 }}">
+  <!--meta name="twitter:description" content="{{ . | truncate 200 }}"-->
   {{- end }}
   <meta name="author" content="{{ .Site.Params.author.name }}"/>
   {{- with .Site.Params.favicon }}
@@ -28,9 +28,9 @@
   {{- end }}
   {{- with default .Params.image | default .Site.Params.logo }}
   <meta property="og:image" content="{{ . | absURL }}" />
-  <meta name="twitter:image" content="{{ . | absURL }}" />
+  <!--meta name="twitter:image" content="{{ . | absURL }}" /-->
   {{- end }}
-  <meta name="twitter:card" content="summary" />
+  <!--meta name="twitter:card" content="summary" />--> 
   {{- with .Site.Params.twitter }}
   <meta name="twitter:site" content="@{{ . }}" />
   <meta name="twitter:creator" content="@{{ . }}" />
